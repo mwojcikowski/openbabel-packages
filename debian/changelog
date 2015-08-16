@@ -1,3 +1,9 @@
+openbabel (2.3.90~2015.08-1.1) trusty; urgency=medium
+
+  * Fix perl bindings
+
+ -- Maciej Wójcikowski <maciek@wojcikowski.pl>  Sun, 16 Aug 2015 02:11:49 +0200
+
 openbabel (2.3.90~2015.08-1) trusty; urgency=medium
 
   * New release from git
