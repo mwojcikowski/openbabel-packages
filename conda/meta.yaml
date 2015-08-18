@@ -1,0 +1,52 @@
+
+package:
+    name: openbabel
+    version: 2.3.90~1git~9dd91b
+
+source:
+    fn: openbabel-9dd91b10cbcaefb2f7b49e39e7d765204d0be136.tar.gz
+    url: https://github.com/openbabel/openbabel/archive/9dd91b10cbcaefb2f7b49e39e7d765204d0be136.tar.gz
+    sha1: 896be2baaaba71d7939a650044a39b268fde48ce
+
+    patches:
+        - fix_library_path_search.diff
+        - fix_data_path.diff
+        - fix_babel_test_paths.diff
+
+build:
+    number: 0
+    detect_binary_files_with_prefix: true
+
+requirements:
+    build:
+        - cmake      # [unix]
+        - pkg-config # [unix]
+        - zlib       # [unix]
+        - swig
+        - eigen
+        - bzip2 
+        - python 
+        - zlib 
+        - libxml2
+        - cairo
+    run:
+        - python 
+        - eigen
+        - zlib
+        - libxml2
+        - cairo
+test:
+  imports:
+    - openbabel
+    - pybel
+  commands:
+    - cd $SRC_DIR/test ; python test_pybel.py
+    - cd $SRC_DIR/test ; python testbabel.py
+    - cd $SRC_DIR/test ; python testkekule.py
+    - cd $SRC_DIR/test ; python testbindings.py
+    - cd $SRC_DIR/test ; python testexample.py
+
+about:
+    home: http://www.openbabel.org/
+    license: GPLv2
+    summary: "A chemical toolbox designed to speak the many languages of chemical data"
