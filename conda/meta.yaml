@@ -1,7 +1,7 @@
 
 package:
     name: openbabel
-    version: 2.3.90~1git~9dd91b
+    version: 2.3.90~2015.09~1git~9dd91b
 
 source:
     fn: openbabel-9dd91b10cbcaefb2f7b49e39e7d765204d0be136.tar.gz
@@ -19,9 +19,8 @@ build:
 
 requirements:
     build:
-        - cmake      # [unix]
-        - pkg-config # [unix]
-        - zlib       # [unix]
+        - cmake
+        - zlib
         - swig
         - eigen
         - bzip2 
