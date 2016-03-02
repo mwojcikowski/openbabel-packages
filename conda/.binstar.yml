@@ -10,6 +10,7 @@ engine:
 
 
 before_script:
+  - conda update --all --yes
   - conda config --add channels mwojcikowski
   
 script: conda build .
