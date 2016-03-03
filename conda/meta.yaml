@@ -1,7 +1,7 @@
 
 package:
     name: openbabel
-    version: 2.3.90.3git.9dd91b
+    version: 2.3.90.4git.9dd91b
 
 source:
     fn: openbabel-9dd91b10cbcaefb2f7b49e39e7d765204d0be136.tar.gz
