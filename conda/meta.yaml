@@ -30,7 +30,7 @@ requirements:
         - cairo
     run:
         - python
-        - imaging
+        #- imaging
         - eigen
         - zlib
         - libxml2
