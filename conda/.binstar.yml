@@ -4,6 +4,7 @@ build_targets: conda
 
 platform:
   - linux-64
+  - osx-64
 
 engine:
   - python=2.7
