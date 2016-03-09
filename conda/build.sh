@@ -7,9 +7,6 @@ fi
 
 cmake -DCMAKE_INSTALL_PREFIX=$PREFIX \
       -DOPTIMIZE_NATIVE=OFF \
-      -DPYTHON_LIBRARY=$PREFIX/lib/libpython${PY_VER}.${SO_EXT} \
-      -DPYTHON_EXECUTABLE=$PYTHON \
-      -DPYTHON_INCLUDE_DIR=$PREFIX/include/python${PY_VER} \
       -DPYTHON_BINDINGS=ON \
       -DRUN_SWIG=ON
 
