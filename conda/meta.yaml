@@ -1,7 +1,7 @@
 
 package:
     name: openbabel
-    version: 2.3.90.4git.9dd91b
+    version: 2.3.90.5git.9dd91b
 
 source:
     fn: openbabel-9dd91b10cbcaefb2f7b49e39e7d765204d0be136.tar.gz
@@ -9,7 +9,7 @@ source:
     sha1: 896be2baaaba71d7939a650044a39b268fde48ce
 
     patches:
-        - fix_library_path_search.diff
+        #- fix_library_path_search.diff
         - fix_data_path.diff
         - fix_babel_test_paths.diff
 
