@@ -1,15 +1,15 @@
 
 package:
     name: openbabel
-    version: 2.3.90.5git.9dd91b
+    version: 2.3.90.6git.dab26c
 
 source:
-    fn: openbabel-9dd91b10cbcaefb2f7b49e39e7d765204d0be136.tar.gz
-    url: https://github.com/openbabel/openbabel/archive/9dd91b10cbcaefb2f7b49e39e7d765204d0be136.tar.gz
-    sha1: 896be2baaaba71d7939a650044a39b268fde48ce
+    fn: openbabel-479dab26cc7a5086c600a6b77cf820320a00b13b.tar.gz
+    url: https://github.com/openbabel/openbabel/archive/479dab26cc7a5086c600a6b77cf820320a00b13b.tar.gz
+    #sha1: 896be2baaaba71d7939a650044a39b268fde48ce
 
     patches:
-        #- fix_library_path_search.diff
+        - fix_library_path_search.diff
         - fix_data_path.diff
         - fix_babel_test_paths.diff
 
