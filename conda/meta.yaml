@@ -9,7 +9,7 @@ source:
     sha1: 896be2baaaba71d7939a650044a39b268fde48ce
 
     patches:
-        #- fix_library_path_search.diff
+        - fix_library_path_search.diff
         - fix_data_path.diff
         - fix_babel_test_paths.diff
 
