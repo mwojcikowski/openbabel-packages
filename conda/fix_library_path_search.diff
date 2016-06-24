@@ -11,7 +11,7 @@ index 5bffac3..bc66235 100644
    char buffer[BUFF_SIZE];
  
    if (!path.empty())
--    paths.push_back(path);
+     paths.push_back(path);
 +    {
 +      strncpy(buffer, path.c_str(), BUFF_SIZE - 1);
 +      // add a trailing NULL just in case
