@@ -1,0 +1,12 @@
+diff --git a/test/CMakeLists.txt b/test/CMakeLists.txt
+index 59bf5f4..53c329a 100644
+--- test/CMakeLists.txt
++++ test/CMakeLists.txt
+@@ -192,6 +192,7 @@ endif(NOT MINGW AND NOT CYGWIN)
+ ###############################
+ 
+ if (PYTHON_BINDINGS)
++  include(UsePythonTest)
+   set(pybindtests
+       bindings _pybel example)
+   foreach(pybindtest ${pybindtests})

@@ -1,0 +1,13 @@
+diff --git a/a/setup.py b/b/setup.py
+index ebdda33..2768b80 100644
+--- scripts/python/setup.py
++++ scripts/python/setup.py
+@@ -34,7 +34,7 @@ setup(name='openbabel',
+       url='http://openbabel.org/',
+       license='http://www.gnu.org/copyleft/gpl.html',
+       py_modules=['openbabel','pybel'],
+-      ext_modules=[obExtension],
++      #ext_modules=[obExtension],
+       description = 'openbabel: Python interface to the Open Babel chemistry library',
+       classifiers=[
+       'Development Status :: 5 - Production/Stable',

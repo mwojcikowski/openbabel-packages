@@ -9,9 +9,17 @@ source:
     #sha1: 896be2baaaba71d7939a650044a39b268fde48ce
 
     patches:
+        #- ob-2-3-2-patch.diff # [osx]
+        #- ob-mavericks.patch  # [osx]
+        #- pybel-test.patch
         - fix_library_path_search.diff
         - fix_data_path.diff
         - fix_babel_test_paths.diff
+        #- fix_pythontest.diff # [win]
+        - libxml_windows_patch.diff [win]
+        # - windows_swig_comment.diff [win]
+        # - absence_of_cat_windows.diff [win]
+        # - dont_create_extension.diff [win]
 
 build:
     number: 1
@@ -23,18 +31,18 @@ requirements:
         - zlib
         - swig
         - eigen
-        - bzip2 
-        - python 
-        - zlib 
+        - bzip2
+        - python
+        - zlib
         - libxml2
-        - cairo
+        - cairo [unix]
     run:
         - python
         #- imaging
         - eigen
         - zlib
         - libxml2
-        - cairo
+        - cairo [unix]
 test:
   imports:
     - openbabel

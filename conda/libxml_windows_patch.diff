@@ -1,0 +1,13 @@
+diff --git a/src/formats/xml/xml.cpp b/src/formats/xml/xml.cpp
+index b7f915b..3e0459d 100644
+--- src/formats/xml/xml.cpp
++++ src/formats/xml/xml.cpp
+@@ -283,7 +283,7 @@ namespace OpenBabel
+     if(pvalue)
+     {
+       AttributeValue = (const char*)pvalue;
+-      xmlFree(pvalue);
++      free(pvalue);
+     }
+     return AttributeValue;
+   }
