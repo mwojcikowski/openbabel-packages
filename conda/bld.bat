@@ -15,11 +15,8 @@ set PATH=%PATH:C:\Program Files\Git\usr\bin;=%
 
 
 cmake ^
+      -G "MinGW Makefiles" ^
       -DCMAKE_INSTALL_PREFIX=%PREFIX% ^
-      -DPYTHON_LIBRARY=%PREFIX%\libs\libpython27.a ^
-      -DPYTHON_EXECUTABLE=%PYTHON% ^
-      -DPYTHON_INCLUDE_DIR=%PREFIX%\include ^
-      -DOPTIMIZE_NATIVE=OFF ^
       -DPYTHON_BINDINGS=ON ^
       -DRUN_SWIG=ON
 :: -G "MinGW Makefiles" ^
