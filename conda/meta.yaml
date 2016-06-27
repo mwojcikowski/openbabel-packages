@@ -16,7 +16,7 @@ source:
         - fix_data_path.diff
         - fix_babel_test_paths.diff
         #- fix_pythontest.diff # [win]
-        - libxml_windows_patch.diff [win]
+        #- libxml_windows_patch.diff [win]
         # - windows_swig_comment.diff [win]
         # - absence_of_cat_windows.diff [win]
         # - dont_create_extension.diff [win]
