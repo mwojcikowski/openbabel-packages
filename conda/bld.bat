@@ -7,7 +7,7 @@ copy "%PREFIX%\..\..\libs\libpython27.a" "%PREFIX%\libs\libpython27.a"
 copy "%PREFIX%\..\..\Lib\distutils\distutils.cfg" "%PREFIX%\Lib\distutils\distutils.cfg"
 :: pip install -i https://pypi.anaconda.org/rmg/simple pycairo
 
-:: set PATH=C:\\MinGW\\bin;%PATH%
+set PATH=C:\\MinGW\\bin;%PATH%
 
 :: remove git from PATH
 set PATH=%PATH:C:\Program Files\Git\usr\bin;=%
@@ -20,10 +20,10 @@ cmake ^
       -DPYTHON_BINDINGS=ON ^
       -DRUN_SWIG=ON
 :: -G "MinGW Makefiles" ^
-:: mingw32-make -j4
-:: mingw32-make install
+mingw32-make -j4
+mingw32-make install
 
-cmake --build . --target install
+:: cmake --build . --target install
 
 ::The python library and shared object do not install into site-packages so
 ::we put them there manually after the build.  This may be possible from CMake
