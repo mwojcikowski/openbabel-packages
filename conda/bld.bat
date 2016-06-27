@@ -1,18 +1,6 @@
-:: set CC=gcc
-:: set CXX=g++
-:: set F77=gfortran
-:: set F90=gfortran
-
-copy "%PREFIX%\..\..\libs\libpython27.a" "%PREFIX%\libs\libpython27.a"
-copy "%PREFIX%\..\..\Lib\distutils\distutils.cfg" "%PREFIX%\Lib\distutils\distutils.cfg"
-:: pip install -i https://pypi.anaconda.org/rmg/simple pycairo
-
 set PATH=C:\\MinGW\\bin;%PATH%
-
 :: remove git from PATH
 set PATH=%PATH:C:\Program Files\Git\usr\bin;=%
-
-
 
 cmake ^
       -G "MinGW Makefiles" ^
@@ -20,7 +8,7 @@ cmake ^
       -DPYTHON_BINDINGS=ON ^
       -DRUN_SWIG=ON
 :: -G "MinGW Makefiles" ^
-mingw32-make -j4
+mingw32-make
 mingw32-make install
 
 :: cmake --build . --target install
