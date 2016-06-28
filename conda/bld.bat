@@ -1,3 +1,7 @@
+set PATH=C:\\MinGW\\bin;%PATH%
+:: remove git from PATH
+set PATH=%PATH:C:\Program Files\Git\usr\bin;=%
+
 cmake ^
       -G "MinGW Makefiles" ^
       -DCMAKE_INSTALL_PREFIX=%PREFIX% ^
