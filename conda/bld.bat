@@ -27,7 +27,9 @@ cmake ^
       -DRUN_SWIG=ON ^
       ..
 
-cmake --build . --target INSTALL
+cmake --build . --target ALL_BUILD
+cmake --build . --target install
+
 :: mingw32-make -j4
 :: mingw32-make install
 
