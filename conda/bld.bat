@@ -1,5 +1,5 @@
 cmake . ^
-      -G %CMAKE_GENERATOR% ^
+      -G "%CMAKE_GENERATOR%" ^
       -DCMAKE_INSTALL_PREFIX=%PREFIX% ^
       -DPYTHON_BINDINGS=ON ^
       -DRUN_SWIG=ON ^
