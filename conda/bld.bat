@@ -7,7 +7,7 @@ cmake ^
       -DRUN_SWIG=ON ^
       ..
 
-cmake --build . --target install
+cmake --build . --target INSTALL -- /verbosity:detailed
 
 if errorlevel 1 exit 1
 
