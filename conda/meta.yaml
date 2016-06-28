@@ -1,11 +1,15 @@
 
 package:
     name: openbabel
-    version: 2.3.90.7git.479dab
+    version: 2.3.90.8git.d9dc13
 
 source:
-    fn: openbabel-479dab26cc7a5086c600a6b77cf820320a00b13b.tar.gz
-    url: https://github.com/openbabel/openbabel/archive/479dab26cc7a5086c600a6b77cf820320a00b13b.tar.gz
+    fn: openbabel-d9dc1356d0c99846f1d501336dcf8d3b36f798e9.tar.gz
+    url: https://github.com/mwojcikowski/openbabel/archive/d9dc1356d0c99846f1d501336dcf8d3b36f798e9.tar.gz
+    
+    #fn: openbabel-479dab26cc7a5086c600a6b77cf820320a00b13b.tar.gz
+    #url: https://github.com/openbabel/openbabel/archive/479dab26cc7a5086c600a6b77cf820320a00b13b.tar.gz
+    
     #sha1: 896be2baaaba71d7939a650044a39b268fde48ce
 
     patches:
