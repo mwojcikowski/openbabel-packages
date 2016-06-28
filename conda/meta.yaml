@@ -1,7 +1,7 @@
 
 package:
     name: openbabel
-    version: 2.3.90.6git.dab26c
+    version: 2.3.90.6git.479dab
 
 source:
     fn: openbabel-479dab26cc7a5086c600a6b77cf820320a00b13b.tar.gz
@@ -34,7 +34,7 @@ requirements:
         - bzip2
         - python
         - zlib
-        - libxml2 [unix]
+        - libxml2
         - cairo [unix]
     run:
         - python
