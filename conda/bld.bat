@@ -3,15 +3,15 @@ set PATH=C:\\MinGW\\bin;%PATH%
 set PATH=%PATH:C:\Program Files\Git\usr\bin;=%
 
 cmake ^
-      -G "MinGW Makefiles" ^
+      -G "%CMAKE_GENERATOR%" ^
       -DCMAKE_INSTALL_PREFIX=%PREFIX% ^
       -DPYTHON_BINDINGS=ON ^
       -DRUN_SWIG=ON ^
       .
 
-:: cmake --build . --target INSTALL
-mingw32-make -j4
-mingw32-make install
+cmake --build . --target INSTALL
+:: mingw32-make -j4
+:: mingw32-make install
 
 ::The python library and shared object do not install into site-packages so
 ::we put them there manually after the build.  This may be possible from CMake

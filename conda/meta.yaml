@@ -22,7 +22,7 @@ requirements:
         - cmake
         - zlib
         - swig
-        - eigen [unix]
+        - eigen
         - bzip2
         - python
         - zlib
