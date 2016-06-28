@@ -8,7 +8,7 @@ cmake ^
       ..
 
 :: cmake --build .. --target install
-msbuild
+msbuild openbabel.sln /m
 
 if errorlevel 1 exit 1
 
