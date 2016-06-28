@@ -30,11 +30,11 @@ requirements:
         - cmake
         - zlib
         - swig
-        - eigen
+        - eigen [unix]
         - bzip2
         - python
         - zlib
-        - libxml2
+        - libxml2 [unix]
         - cairo [unix]
     run:
         - python
