@@ -1,4 +1,6 @@
-cmake . ^
+mkdir build
+cd build
+cmake .. ^
       -G "%CMAKE_GENERATOR%" ^
       -DCMAKE_INSTALL_PREFIX=%PREFIX% ^
       -DPYTHON_BINDINGS=ON ^
