@@ -8,6 +8,8 @@ cmake .. ^
 :: cmake --build . --target install
 msbuild
 
+if errorlevel 1 exit 1
+
 ::The python library and shared object do not install into site-packages so
 ::we put them there manually after the build.  This may be possible from CMake
 ::using option -DPYTHON_PREFIX from ob wiki, but doesn't seem to work
