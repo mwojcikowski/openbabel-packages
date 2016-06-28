@@ -18,12 +18,14 @@ set PATH=C:\\MinGW\\bin;%PATH%
 :: remove git from PATH
 set PATH=%PATH:C:\Program Files\Git\usr\bin;=%
 
+mkdir build
+cd build
 cmake ^
       -G "%CMAKE_GENERATOR%" ^
       -DCMAKE_INSTALL_PREFIX=%PREFIX% ^
       -DPYTHON_BINDINGS=ON ^
       -DRUN_SWIG=ON ^
-      .
+      ..
 
 cmake --build . --target INSTALL
 :: mingw32-make -j4
@@ -35,10 +37,10 @@ cmake --build . --target INSTALL
 
 
 :: Copy the key binary files to the site packages.  this is an unfortunate workaround for windows
- copy bin\_openbabel.pyd %PREFIX%\Lib\site-packages
- xcopy %PREFIX%\bin %PREFIX%\Library\bin /E
+:: copy bin\_openbabel.pyd %PREFIX%\Lib\site-packages
+:: xcopy %PREFIX%\bin %PREFIX%\Library\bin /E
 :: rmdir /S %PREFIX%\bin
 
 :: Install the python site package
- cd scripts\python
- %PYTHON% setup.py install
+:: cd scripts\python
+:: %PYTHON% setup.py install
