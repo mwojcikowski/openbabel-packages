@@ -25,10 +25,11 @@ cmake ^
       -DCMAKE_INSTALL_PREFIX=%PREFIX% ^
       -DPYTHON_BINDINGS=ON ^
       -DRUN_SWIG=ON ^
+      -DCMAKE_BUILD_TYPE=Release ^
       ..
 
-cmake --build . --target ALL_BUILD
-cmake --build . --target install
+cmake --build . --target ALL_BUILD --config Release
+cmake --build . --target install --config Release
 
 :: mingw32-make -j4
 :: mingw32-make install
