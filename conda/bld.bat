@@ -7,8 +7,7 @@ cmake ^
       -DRUN_SWIG=ON ^
       ..
 
-:: cmake --build .. --target install
-msbuild openbabel.sln
+cmake --build .. --target install
 
 if errorlevel 1 exit 1
 
