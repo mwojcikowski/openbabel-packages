@@ -8,7 +8,7 @@ cmake ^
       -DPYTHON_BINDINGS=ON ^
       -DRUN_SWIG=ON
 
-cmake --build . --target install
+cmake --build . --target install --config Release
 
 ::The python library and shared object do not install into site-packages so
 ::we put them there manually after the build.  This may be possible from CMake
@@ -23,3 +23,5 @@ rmdir /S %PREFIX%\bin
 :: Install the python site package
 cd scripts\python
 %PYTHON% setup.py install
+
+if errorlevel 1 exit 1
