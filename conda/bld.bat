@@ -1,11 +1,10 @@
-mkdir build
-cd build
-cmake .. ^
+cmake . ^
       -G "%CMAKE_GENERATOR%" ^
       -DCMAKE_INSTALL_PREFIX=%PREFIX% ^
       -DPYTHON_BINDINGS=ON ^
       -DRUN_SWIG=ON ^
-:: cmake --build . --target install
+
+:: cmake --build .. --target install
 msbuild
 
 if errorlevel 1 exit 1
