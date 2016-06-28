@@ -9,7 +9,9 @@ cmake ^
       -DRUN_SWIG=ON ^
       .
 
-cmake --build . --target INSTALL
+:: cmake --build . --target INSTALL
+mingw32-make -j4
+mingw32-make install
 
 ::The python library and shared object do not install into site-packages so
 ::we put them there manually after the build.  This may be possible from CMake
@@ -17,10 +19,10 @@ cmake --build . --target INSTALL
 
 
 :: Copy the key binary files to the site packages.  this is an unfortunate workaround for windows
-:: copy bin\_openbabel.pyd %PREFIX%\Lib\site-packages
-:: xcopy %PREFIX%\bin %PREFIX%\Library\bin /E
+ copy bin\_openbabel.pyd %PREFIX%\Lib\site-packages
+ xcopy %PREFIX%\bin %PREFIX%\Library\bin /E
 :: rmdir /S %PREFIX%\bin
 
 :: Install the python site package
-:: cd scripts\python
-:: %PYTHON% setup.py install
+ cd scripts\python
+ %PYTHON% setup.py install
