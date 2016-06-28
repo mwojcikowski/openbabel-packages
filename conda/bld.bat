@@ -28,8 +28,9 @@ cmake ^
       -DCMAKE_BUILD_TYPE=Release ^
       ..
 
-cmake --build . --target ALL_BUILD --config Release
-cmake --build . --target install --config Release
+MSBuild openbabel.sln /m /verbosity:minimal
+::cmake --build . --target ALL_BUILD --config Release
+::cmake --build . --target install --config Release
 
 :: mingw32-make -j4
 :: mingw32-make install
