@@ -9,7 +9,7 @@ cmake ^
       -DRUN_SWIG=ON ^
       .
 
-cmake --build . --target INSTALL -- /verbosity:minimal
+cmake --build . --target INSTALL
 
 ::The python library and shared object do not install into site-packages so
 ::we put them there manually after the build.  This may be possible from CMake
