@@ -1,5 +1,5 @@
 cmake ^
-      -G "%CMAKE_GENERATOR%" ^
+      -G "MinGW Makefiles" ^
       -DCMAKE_INSTALL_PREFIX=%PREFIX% ^
       -DPYTHON_BINDINGS=ON ^
       -DRUN_SWIG=ON ^
