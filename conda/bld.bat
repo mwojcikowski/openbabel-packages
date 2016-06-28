@@ -3,15 +3,12 @@ set PATH=C:\\MinGW\\bin;%PATH%
 set PATH=%PATH:C:\Program Files\Git\usr\bin;=%
 
 cmake ^
-      -G "MinGW Makefiles" ^
+      -G "Visual Studio 9 2008" ^
       -DCMAKE_INSTALL_PREFIX=%PREFIX% ^
       -DPYTHON_BINDINGS=ON ^
       -DRUN_SWIG=ON
-:: -G "MinGW Makefiles" ^
-mingw32-make
-mingw32-make install
 
-:: cmake --build . --target install
+cmake --build . --target install -- -j4
 
 ::The python library and shared object do not install into site-packages so
 ::we put them there manually after the build.  This may be possible from CMake
