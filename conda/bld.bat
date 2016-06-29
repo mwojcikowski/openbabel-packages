@@ -44,5 +44,5 @@ xcopy %PREFIX%\bin %PREFIX%\Library\bin /E
 :: rmdir /S %PREFIX%\bin
 
 :: Install the python site package
-cd scripts\python
-%PYTHON% setup.py install
+:: cd scripts\python
+:: %PYTHON% setup.py install
