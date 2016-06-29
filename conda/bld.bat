@@ -24,9 +24,9 @@ cmake ^
       -DPYTHON_BINDINGS=ON ^
       -DRUN_SWIG=ON ^
       -DCMAKE_BUILD_TYPE=Release ^
-      ..
+      .
 
-MSBuild openbabel.sln /m /verbosity:minimal
+MSBuild openbabel.sln /m
 ::cmake --build . --target ALL_BUILD --config Release
 ::cmake --build . --target install --config Release
 
