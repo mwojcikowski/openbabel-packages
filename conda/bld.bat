@@ -14,12 +14,12 @@ copy "C:\Program Files (x86)\Microsoft Visual Studio 9.0\VC\vcpackages\AMD64.VCP
 copy "C:\Program Files (x86)\Microsoft Visual Studio 9.0\VC\vcpackages\Itanium.VCPlatform.config" "C:\Program Files (x86)\Microsoft Visual Studio 9.0\VC\vcpackages\Itanium.VCPlatform.Express.config"
 
 
-copy "%PREFIX%\..\..\libs\libpython27.a" "%PREFIX%\libs\libpython27.a"
-copy "%PREFIX%\..\..\Lib\distutils\distutils.cfg" "%PREFIX%\Lib\distutils\distutils.cfg"
+:: copy "%PREFIX%\..\..\libs\libpython27.a" "%PREFIX%\libs\libpython27.a"
+:: copy "%PREFIX%\..\..\Lib\distutils\distutils.cfg" "%PREFIX%\Lib\distutils\distutils.cfg"
 
-set PATH=C:\\MinGW\\bin;%PATH%
+:: set PATH=C:\\MinGW\\bin;%PATH%
 :: remove git from PATH
-set PATH=%PATH:C:\Program Files\Git\usr\bin;=%
+:: set PATH=%PATH:C:\Program Files\Git\usr\bin;=%
 
 cmake ^
       -G "%CMAKE_GENERATOR%" ^
@@ -31,7 +31,7 @@ cmake ^
       -DCMAKE_BUILD_TYPE=Release ^
       .
 
-MSBuild openbabel.sln /m
+MSBuild openbabel.sln /m /t:Build /p:Configuration=Release
 ::cmake --build . --target ALL_BUILD --config Release
 ::cmake --build . --target install --config Release
 
