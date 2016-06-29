@@ -31,7 +31,8 @@ cmake ^
       .
 
 ::MSBuild openbabel.sln /m /t:Build /p:Configuration=Release /logger:"C:\Program Files\AppVeyor\BuildAgent\Appveyor.MSBuildLogger.dll"
-cmake --build . --target install --config Release -- /m /logger:"C:\Program Files\AppVeyor\BuildAgent\Appveyor.MSBuildLogger.dll"
+cmake --build . --target install --config Release 
+::-- /m /logger:"C:\Program Files\AppVeyor\BuildAgent\Appveyor.MSBuildLogger.dll"
 
 :: mingw32-make -j4
 :: mingw32-make install
