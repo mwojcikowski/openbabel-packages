@@ -18,8 +18,6 @@ set PATH=C:\\MinGW\\bin;%PATH%
 :: remove git from PATH
 set PATH=%PATH:C:\Program Files\Git\usr\bin;=%
 
-mkdir build
-cd build
 cmake ^
       -G "%CMAKE_GENERATOR%" ^
       -DCMAKE_INSTALL_PREFIX=%PREFIX% ^
