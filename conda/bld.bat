@@ -14,6 +14,9 @@ copy "C:\Program Files (x86)\Microsoft Visual Studio 9.0\VC\vcpackages\AMD64.VCP
 copy "C:\Program Files (x86)\Microsoft Visual Studio 9.0\VC\vcpackages\Itanium.VCPlatform.config" "C:\Program Files (x86)\Microsoft Visual Studio 9.0\VC\vcpackages\Itanium.VCPlatform.Express.config"
 
 
+copy "%PREFIX%\..\..\libs\libpython27.a" "%PREFIX%\libs\libpython27.a"
+copy "%PREFIX%\..\..\Lib\distutils\distutils.cfg" "%PREFIX%\Lib\distutils\distutils.cfg"
+
 set PATH=C:\\MinGW\\bin;%PATH%
 :: remove git from PATH
 set PATH=%PATH:C:\Program Files\Git\usr\bin;=%
@@ -21,6 +24,9 @@ set PATH=%PATH:C:\Program Files\Git\usr\bin;=%
 cmake ^
       -G "%CMAKE_GENERATOR%" ^
       -DCMAKE_INSTALL_PREFIX=%PREFIX% ^
+      -DPYTHON_LIBRARY=%PREFIX%\libs\libpython27.a ^
+      -DPYTHON_EXECUTABLE=%PYTHON% ^
+      -DPYTHON_INCLUDE_DIR=%PREFIX%\include ^
       -DPYTHON_BINDINGS=ON ^
       -DRUN_SWIG=ON ^
       -DCMAKE_BUILD_TYPE=Release ^
