@@ -30,7 +30,7 @@ cmake ^
       -DCMAKE_BUILD_TYPE=Release ^
       .
 
-MSBuild openbabel.sln /m /t:Build /p:Configuration=Release
+MSBuild openbabel.sln /m /t:Build /p:Configuration=Release /logger:"C:\Program Files\AppVeyor\BuildAgent\Appveyor.MSBuildLogger.dll"
 ::cmake --build . --target ALL_BUILD --config Release
 ::cmake --build . --target install --config Release -- /m
 
