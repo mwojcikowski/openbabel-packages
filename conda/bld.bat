@@ -24,7 +24,6 @@ copy "C:\Program Files (x86)\Microsoft Visual Studio 9.0\VC\vcpackages\Itanium.V
 cmake ^
       -G "%CMAKE_GENERATOR%" ^
       -DCMAKE_INSTALL_PREFIX=%PREFIX% ^
-      -DPYTHON_LIBRARY=%CONDA_DEFAULT_ENV%\libs\python%CONDA_PY%.lib ^
       -DPYTHON_EXECUTABLE=%PYTHON% ^
       -DPYTHON_BINDINGS=ON ^
       -DRUN_SWIG=ON ^
