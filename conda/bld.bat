@@ -24,9 +24,9 @@ set PATH=%PATH:C:\Program Files\Git\usr\bin;=%
 cmake ^
       -G "%CMAKE_GENERATOR%" ^
       -DCMAKE_INSTALL_PREFIX=%PREFIX% ^
-      -DPYTHON_LIBRARY=%PREFIX%\libs\libpython27.a ^
+      -DPYTHON_LIBRARY=%CONDA_DEFAULT_ENV%\libs\python%CONDA_PY%.lib ^
       -DPYTHON_EXECUTABLE=%PYTHON% ^
-      -DPYTHON_INCLUDE_DIR=%PREFIX%\include ^
+      -DPYTHON_INCLUDE_DIR=%CONDA_DEFAULT_ENV%\include ^
       -DPYTHON_BINDINGS=ON ^
       -DRUN_SWIG=ON ^
       -DCMAKE_BUILD_TYPE=Release ^
