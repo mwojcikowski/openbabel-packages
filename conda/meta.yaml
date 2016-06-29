@@ -18,7 +18,7 @@ source:
         - fix_babel_test_paths.diff
 
 build:
-    number: 1
+    number: 2
     detect_binary_files_with_prefix: true
 
 requirements:
@@ -34,7 +34,6 @@ requirements:
         - cairo [unix]
     run:
         - python
-        #- imaging
         - eigen
         - zlib
         - libxml2

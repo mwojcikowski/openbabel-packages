@@ -33,7 +33,7 @@ cmake ^
 
 MSBuild openbabel.sln /m /t:Build /p:Configuration=Release
 ::cmake --build . --target ALL_BUILD --config Release
-::cmake --build . --target install --config Release
+::cmake --build . --target install --config Release -- /m
 
 :: mingw32-make -j4
 :: mingw32-make install
