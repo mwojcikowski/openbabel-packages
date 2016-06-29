@@ -44,8 +44,8 @@ cmake --build . --target install --config Release
 
 :: Copy the key binary files to the site packages.  this is an unfortunate workaround for windows
 copy bin\Release\_openbabel.pyd %PREFIX%\Lib\site-packages
-xcopy %PREFIX%\bin\Release %PREFIX%\Library\bin /E
-::rmdir /S %PREFIX%\bin\Release
+xcopy %PREFIX%\Release\bin %PREFIX%\Library\bin /E
+::rmdir /S %PREFIX%\Release\bin
 
 :: Install the python site package
 cd scripts\python
