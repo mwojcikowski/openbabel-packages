@@ -47,5 +47,5 @@ cmake --build . --target install --config Release -- /msbuild:m /msbuild:logger:
 :: rmdir /S %PREFIX%\bin
 
 :: Install the python site package
-:: cd scripts\python
-:: %PYTHON% setup.py install
+cd scripts\python
+%PYTHON% setup.py install
