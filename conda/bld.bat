@@ -41,10 +41,10 @@ MSBuild openbabel.sln /m /verbosity:minimal
 
 
 :: Copy the key binary files to the site packages.  this is an unfortunate workaround for windows
-:: copy bin\_openbabel.pyd %PREFIX%\Lib\site-packages
-:: xcopy %PREFIX%\bin %PREFIX%\Library\bin /E
+copy bin\_openbabel.pyd %PREFIX%\Lib\site-packages
+xcopy %PREFIX%\bin %PREFIX%\Library\bin /E
 :: rmdir /S %PREFIX%\bin
 
 :: Install the python site package
-:: cd scripts\python
-:: %PYTHON% setup.py install
+cd scripts\python
+%PYTHON% setup.py install
