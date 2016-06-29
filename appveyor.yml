@@ -46,7 +46,7 @@ test_script:
   # is set dynamically. This unfortunately mean that conda build --output
   # doesn't really work.
   #
-  - "%CMD_IN_ENV% conda build conda -c mwojcikowski"
+  - "%CMD_IN_ENV% conda build conda -c mwojcikowski --dirty" 
   # Move the conda package into the current directory, to register it
   # as an "artifact" for Appveyor. cmd.exe does't have good globbing, so
   # we'll use a simple python script.
@@ -55,7 +55,8 @@ test_script:
 artifacts:
   # Archive the generated conda package in the ci.appveyor.com build report.
   - path: '*.tar.bz2'
-
+  - path: 'C:\Python27_64\envs\_build\**\*'
+  
 on_success:
   # Upload built binaries to binstar.org. The globbing and handling of the
   # exit-status code is tricky in cmd.exe or powershell, so we're just using
