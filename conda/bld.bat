@@ -22,7 +22,7 @@ copy scripts/Release/_openbabel.lib %PREFIX%\Lib\site-packages
 copy scripts\python\openbabel.py %PREFIX%\Lib\site-packages
 copy scripts\python\pybel.py %PREFIX%\Lib\site-packages
 xcopy %PREFIX%\bin\data %PREFIX%\share\openbabel\2.3.90 /e /c
-rmdir /s %PREFIX%\bin\data
+rmdir /s /q %PREFIX%\bin\data
 xcopy %PREFIX%\bin %PREFIX%\Library\bin /e /c
 rmdir /s /q %PREFIX%\bin
 
