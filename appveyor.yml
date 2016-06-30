@@ -1,6 +1,7 @@
 environment:
   # See README for information on the token
-
+  ANACONDA_TOKEN:
+    secure: AaDohlZ5kwkG4ymSAkUVvTIzL1SDr1WMl/0A/07mnOWqcxOTDMqaMTSeDSvlOEZV
   global:
     # SDK v7.0 MSVC Express 2008's SetEnv.cmd script will fail if the
     # /E:ON and /V:ON options are not enabled in the batch script intepreter
@@ -46,7 +47,7 @@ test_script:
   # is set dynamically. This unfortunately mean that conda build --output
   # doesn't really work.
   #
-  - "%CMD_IN_ENV% conda build conda -c mwojcikowski" 
+  - "%CMD_IN_ENV% conda build conda -c mwojcikowski"
   # Move the conda package into the current directory, to register it
   # as an "artifact" for Appveyor. cmd.exe does't have good globbing, so
   # we'll use a simple python script.
@@ -55,10 +56,9 @@ test_script:
 artifacts:
   # Archive the generated conda package in the ci.appveyor.com build report.
   - path: '*.tar.bz2'
-  - path: "%PYTHON%\\envs\\_build\\**\\*"
-  
+
 on_success:
   # Upload built binaries to binstar.org. The globbing and handling of the
   # exit-status code is tricky in cmd.exe or powershell, so we're just using
   # a python script.
-  #- python continuous-integration\binstar-push.py
+  - python continuous-integration\binstar-push.py
