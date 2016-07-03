@@ -10,8 +10,8 @@ cmake ^
 cmake --build . --target install --config Release
 
 :: Where should BABEL_DATADIR go?
-::xcopy %PREFIX%\bin\data %PREFIX%\share\openbabel\2.3.90 /e /c
-::rmdir /s /q %PREFIX%\bin\data
+xcopy %PREFIX%\bin\data %PREFIX%\share\openbabel /e /c
+rmdir /s /q %PREFIX%\bin\data
 
 xcopy %PREFIX%\bin %PREFIX%\Library\bin /e /c
 rmdir /s /q %PREFIX%\bin
