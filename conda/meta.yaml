@@ -39,11 +39,6 @@ test:
     - pybel
   commands:
     - obabel --help
-    - cd $SRC_DIR/test ; python test_pybel.py
-    - cd $SRC_DIR/test ; python testbabel.py
-    - cd $SRC_DIR/test ; python testkekule.py
-    - cd $SRC_DIR/test ; python testbindings.py
-    - cd $SRC_DIR/test ; python testexample.py
 
 about:
     home: http://www.openbabel.org/
