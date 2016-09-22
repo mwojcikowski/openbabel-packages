@@ -6,7 +6,7 @@ import shutil
 try:
     from conda_build.config import config
 except ImportError:
-    from conda_build import config
+    from conda_build.config import Config
 
 with open(os.path.join(sys.argv[1], 'meta.yaml')) as f:
     name = yaml.load(f)['package']['name']
