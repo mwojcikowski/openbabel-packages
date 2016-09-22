@@ -14,11 +14,13 @@ source:
         - fix_babel_test_paths.diff
 
 build:
-    number: 0
+    number: 1
     detect_binary_files_with_prefix: true
 
 requirements:
     build:
+        - gcc     # [linux]
+        - llvm    # [osx]
         - cmake
         - zlib
         - swig
@@ -26,13 +28,11 @@ requirements:
         - bzip2
         - python
         - libxml2
-        - cairo  # [unix]
     run:
         - python
-        - eigen
+        - libgcc  # [linux]
         - zlib
         - libxml2
-        - cairo  # [unix]
 test:
   imports:
     - openbabel
