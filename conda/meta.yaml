@@ -1,16 +1,12 @@
 
 package:
     name: openbabel
-    version: 2.3.90.9git.575b44
+    version: 2.4.0
 
 source:
-    fn: openbabel-575b44feaf4e4efe94339685f201b9ac9f02d6bd.tar.gz
-    url: https://github.com/mwojcikowski/openbabel/archive/575b44feaf4e4efe94339685f201b9ac9f02d6bd.tar.gz
-
-    #fn: openbabel-479dab26cc7a5086c600a6b77cf820320a00b13b.tar.gz
-    #url: https://github.com/openbabel/openbabel/archive/479dab26cc7a5086c600a6b77cf820320a00b13b.tar.gz
-
-    #sha1: 896be2baaaba71d7939a650044a39b268fde48ce
+    fn: openbabel-2-4-0.zip
+    url: https://github.com/openbabel/openbabel/archive/openbabel-2-4-0.zip
+    sha1: 822ceadb66316b281ecfcbb37e1c7227634b909d
 
     patches:
         - fix_library_path_search.diff
@@ -18,7 +14,7 @@ source:
         - fix_babel_test_paths.diff
 
 build:
-    number: 3
+    number: 0
     detect_binary_files_with_prefix: true
 
 requirements:
@@ -29,20 +25,20 @@ requirements:
         - eigen
         - bzip2
         - python
-        - zlib
         - libxml2
-        - cairo [unix]
+        - cairo  # [unix]
     run:
         - python
         - eigen
         - zlib
         - libxml2
-        - cairo [unix]
+        - cairo  # [unix]
 test:
   imports:
     - openbabel
     - pybel
   commands:
+    - obabel --help
     - cd $SRC_DIR/test ; python test_pybel.py
     - cd $SRC_DIR/test ; python testbabel.py
     - cd $SRC_DIR/test ; python testkekule.py
