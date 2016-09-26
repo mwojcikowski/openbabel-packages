@@ -1,6 +1,6 @@
 os:
     - osx
-
+language: c
 env:
     matrix:
         - CONDA_PY=27
