@@ -1,23 +1,20 @@
 os:
-    - osx
+- osx
 language: c
 env:
-    matrix:
-        - CONDA_PY=27
-        - CONDA_PY=34
-        - CONDA_PY=35
-    global:
-        secure: OVE5GtJJ2Ga+GDJIFuyPsbJ5SFCecdbiPv6TzrdNT6AoMdjEZK/zw1ZRHNtMHvrPbq5G7qY/54tHEePSKJlm7pi8agYPbTAg3pPvUvFfmyoQm4Vg07BEULKJ9wfgNI2c+IsMp77r1hW+04+HpwMT81p/zYndVcuhvj7C7vJ0hgo=
-
+  matrix:
+  - CONDA_PY=27
+  - CONDA_PY=34
+  - CONDA_PY=35
+  global:
+  - secure: Mh6bxkikBVLMhJ54lM3hlEHgRbL5nEQIb3nxs0YMvqXXY/B2kytki4aQ1uWtuYQlXUwuSX8R0ttRUdMflHQL4uunCUb0u+/05tLmScibB2m8n/sB9/7Kl6FL+eM9M6Kt6zeGSSNxUl/5rLg3CxC7Gmz4C/D8kcnGfHZShe9488NwjmP+sqJpMue1KXmZ3OhyZezD3jrjAxVhukYbHgGKi2IPso8DoGYFcVNi1kvCHw22EzKeytwWpDTsqfSqNryPimnbbgyEBxzpDl+lxZVa1MQC54RN0qAOczmm6KCXZR3YEIzuQ5sKFK6rijEHMd9IVGWwZQEN+5zTww8PEh98DV9aUqfT0kbgGnafWbOKnno4z8mImACgW21WggQg2fFj1tjHeYh3cMaMQvJrh2hfpHuGz+gKE+bEqyUFSAsjKrLTBsQFjEIQz0MsjgqLT/8qsus4PyNi/q1NKzXW/4pBsvQjBdXRUV8TAqk0JiyHqR8gAjQow5WrPDyBJreAIgB3nOBd45wws+CHJI1mHays98j6nrRAa8SVD9vERZnkC1rXwl2OoD+JMfNYti/9Q2xfJ3fHLdioZkQA5TPN0a9bHte7JWfkDzPsOjAmgLZ8eyJsdNbUSVLy4BMkCStEb4RnvoHQXq+T1GDRP+nlWqgtGbqxuiYNgKh4GQorbI2xNw8=
 install:
-    - wget http://repo.continuum.io/miniconda/Miniconda-latest-MacOSX-x86_64.sh -O miniconda.sh
-    - bash miniconda.sh -b -p $HOME/miniconda
-    - export PATH="$HOME/miniconda/bin:$PATH"
-    - conda update --yes conda
-    - conda install --yes conda-build anaconda-client
-
+- wget http://repo.continuum.io/miniconda/Miniconda-latest-MacOSX-x86_64.sh -O miniconda.sh
+- bash miniconda.sh -b -p $HOME/miniconda
+- export PATH="$HOME/miniconda/bin:$PATH"
+- conda update --yes conda
+- conda install --yes conda-build anaconda-client
 script:
-    - conda build --python=$CONDA_PY conda/ -c mwojcikowski
-
+- conda build --python=$CONDA_PY conda/ -c mwojcikowski
 after_success:
-    - anaconda -t $ANACONDA_TOKEN upload $HOME/miniconda/conda-bld/*/*.tar.bz2
+- anaconda -t $ANACONDA_TOKEN upload $HOME/miniconda/conda-bld/*/*.tar.bz2
