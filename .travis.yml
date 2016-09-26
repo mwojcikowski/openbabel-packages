@@ -17,7 +17,7 @@ before_install:
     - conda install --yes conda-build
 
 install:
-    - conda build --python=$CONDA_PY conda/
+    - conda build --python=$CONDA_PY conda/ -c mwojcikowski
 
 after_success:
     - anaconda -t $ANACONDA_TOKEN upload $HOME/miniconda/conda-bld/*/*.tar.bz2
