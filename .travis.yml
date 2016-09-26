@@ -1,12 +1,12 @@
 os:
     - osx
 
-language: python
+env:
+  matrix:
+    - CONDA_PY=27
+    - CONDA_PY=34
+    - CONDA_PY=35
 
-python:
-    - '2.7'
-    - '3.4'
-    - '3.5'
 env:
     global:
         secure: OVE5GtJJ2Ga+GDJIFuyPsbJ5SFCecdbiPv6TzrdNT6AoMdjEZK/zw1ZRHNtMHvrPbq5G7qY/54tHEePSKJlm7pi8agYPbTAg3pPvUvFfmyoQm4Vg07BEULKJ9wfgNI2c+IsMp77r1hW+04+HpwMT81p/zYndVcuhvj7C7vJ0hgo=
@@ -18,7 +18,7 @@ before_install:
     - conda update --yes conda
 
 install:
-    - conda build --python=$TRAVIS_PYTHON_VERSION conda/
+    - conda build --python=$CONDA_PY conda/
 
 after_success:
     - anaconda -t $ANACONDA_TOKEN upload $HOME/miniconda/conda-bld/*/*.tar.bz2
