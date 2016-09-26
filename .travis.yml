@@ -1,6 +1,6 @@
 os:
     - osx
-    
+
 language: python
 
 python:
@@ -16,10 +16,9 @@ before_install:
     - ./miniconda.sh -b -p $HOME/miniconda
     - export PATH="$HOME/miniconda/bin:$PATH"
     - conda update --yes conda
-    - chmod u+x conda/deploy.sh
 
 install:
-    - conda build conda/
+    - conda build --python=$TRAVIS_PYTHON_VERSION conda/
 
 after_success:
     - anaconda -t $ANACONDA_TOKEN upload $HOME/miniconda/conda-bld/*/*.tar.bz2
