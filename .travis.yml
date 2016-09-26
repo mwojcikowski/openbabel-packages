@@ -1,0 +1,26 @@
+os:
+    - osx
+language: python
+python:
+    - '2.7'
+    - '3.4'
+    - '3.5'
+env:
+    global:
+        secure: OVE5GtJJ2Ga+GDJIFuyPsbJ5SFCecdbiPv6TzrdNT6AoMdjEZK/zw1ZRHNtMHvrPbq5G7qY/54tHEePSKJlm7pi8agYPbTAg3pPvUvFfmyoQm4Vg07BEULKJ9wfgNI2c+IsMp77r1hW+04+HpwMT81p/zYndVcuhvj7C7vJ0hgo=
+deploy:
+
+    # conda
+    - provider: script
+      script: conda/deploy.sh
+      skip_cleanup: true
+before_install:
+    - wget http://repo.continuum.io/miniconda/Miniconda-latest-MacOSX-x86_64.sh -O miniconda.sh
+    - ./miniconda.sh -b -p $HOME/miniconda
+    - export PATH="$HOME/miniconda/bin:$PATH"
+    - conda update --yes conda
+    - chmod u+x conda/deploy.sh
+install:
+    - conda build conda/
+after_success:
+    - anaconda -t $ANACONDA_TOKEN upload $HOME/miniconda/conda-bld/*/*.tar.bz2
