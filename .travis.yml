@@ -9,14 +9,14 @@ env:
     global:
         secure: OVE5GtJJ2Ga+GDJIFuyPsbJ5SFCecdbiPv6TzrdNT6AoMdjEZK/zw1ZRHNtMHvrPbq5G7qY/54tHEePSKJlm7pi8agYPbTAg3pPvUvFfmyoQm4Vg07BEULKJ9wfgNI2c+IsMp77r1hW+04+HpwMT81p/zYndVcuhvj7C7vJ0hgo=
 
-before_install:
+installinstall:
     - wget http://repo.continuum.io/miniconda/Miniconda-latest-MacOSX-x86_64.sh -O miniconda.sh
     - bash miniconda.sh -b -p $HOME/miniconda
     - export PATH="$HOME/miniconda/bin:$PATH"
     - conda update --yes conda
     - conda install --yes conda-build
 
-install:
+script:
     - conda build --python=$CONDA_PY conda/ -c mwojcikowski
 
 after_success:
