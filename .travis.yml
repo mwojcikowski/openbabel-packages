@@ -17,4 +17,4 @@ install:
 script:
 - conda build --python=$CONDA_PY conda/ -c mwojcikowski
 after_success:
-- anaconda -t $ANACONDA_TOKEN upload $HOME/miniconda/conda-bld/*/*.tar.bz2
+- anaconda -t $ANACONDA_TOKEN upload --force $HOME/miniconda/conda-bld/*/*.tar.bz2
