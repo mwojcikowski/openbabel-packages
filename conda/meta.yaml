@@ -39,6 +39,7 @@ test:
     - pybel
   commands:
     - obabel --help
+    - obabel -:"c1ccccc1" --gen3d -omol2
 
 about:
     home: http://www.openbabel.org/
