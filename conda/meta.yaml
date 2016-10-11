@@ -1,11 +1,11 @@
 
 package:
     name: openbabel
-    version: 2.4.0
+    version: 2.4.1
 
 source:
-    fn: openbabel-2-4-0.zip
-    url: https://github.com/openbabel/openbabel/archive/openbabel-2-4-0.zip
+    fn: openbabel-2-4-1.zip
+    url: https://github.com/openbabel/openbabel/archive/openbabel-2-4-1.zip
     sha1: 822ceadb66316b281ecfcbb37e1c7227634b909d
 
     patches:
@@ -14,7 +14,7 @@ source:
         - fix_babel_test_paths.diff
 
 build:
-    number: 1
+    number: 0
     detect_binary_files_with_prefix: true
 
 requirements:
