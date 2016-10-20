@@ -19,7 +19,6 @@ build:
 
 requirements:
     build:
-        - gcc     # [linux]
         - llvm    # [osx]
         - cmake
         - zlib
@@ -30,7 +29,6 @@ requirements:
         - libxml2
     run:
         - python
-        - libgcc  # [linux]
         - zlib
         - libxml2
 test:
